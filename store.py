@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from numerize import numerize
 
 st.set_page_config(layout="wide")
 
@@ -32,7 +33,7 @@ with met1:
 
     st.metric(
         "Total sales",
-        df_now['Sales'].sum(),
+        numerize.numerize(df_now['Sales'].sum()),
         str(round(sales_delta*100,2)) + "%"
         )
 with met2:
